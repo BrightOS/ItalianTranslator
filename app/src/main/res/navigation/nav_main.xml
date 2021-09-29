@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/themeChangerFragment">
+
+    <fragment
+        android:id="@+id/selectorFragment"
+        android:name="ru.brightos.italiantranslator.ui.SelectorFragment"
+        android:label="SelectorFragment"
+        tools:layout="@layout/fragment_selector">
+        <action
+            android:id="@+id/action_selectorFragment_to_wordCheckFragment"
+            app:destination="@id/wordCheckFragment" />
+        <action
+            android:id="@+id/action_selectorFragment_to_wordLearnFragment"
+            app:destination="@id/wordLearnFragment" />
+        <argument
+            android:name="type"
+            app:argType="integer" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/wordLearnFragment"
+        android:name="ru.brightos.italiantranslator.ui.WordLearnFragment"
+        android:label="FordLearnFragment"
+        tools:layout="@layout/fragment_word_learn" />
+    <fragment
+        android:id="@+id/wordCheckFragment"
+        android:name="ru.brightos.italiantranslator.ui.WordCheckFragment"
+        android:label="WordCheckFragment"
+        tools:layout="@layout/fragment_word_check" />
+    <fragment
+        android:id="@+id/themeChangerFragment"
+        android:name="ru.brightos.italiantranslator.ui.ThemeChangerFragment"
+        android:label="ThemeChangerFragment"
+        tools:layout="@layout/fragment_theme_changer">
+        <action
+            android:id="@+id/action_themeChangerFragment_to_selectorFragment"
+            app:destination="@id/selectorFragment" />
+    </fragment>
+
+</navigation>
